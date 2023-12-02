@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { PartialMovieInterface } from '../../../movies/movie';
 
 @Component({
   selector: 'movie-card',
@@ -9,5 +10,5 @@ import { CommonModule } from '@angular/common';
   styleUrl: './movie-card.component.css',
 })
 export class MovieCardComponent {
-  @Input() movie: any;
+  @Input() movie: PartialMovieInterface = {};
 }
