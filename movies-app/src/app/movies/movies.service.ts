@@ -13,8 +13,8 @@ export class MoviesService {
   private url = `${this.baseUrl}/discover/movie?sort_by=popularity.desc&api_key=${environments.API_KEY}&language=en-US`;
   private httpClient = inject(HttpClient);
 
-  getMovies() {
-    return this.httpClient.get<PartialMovieInterface[]>(this.url)
+  getMovies({ page = 1 }) {
+    return this.httpClient.get<PartialMovieInterface[]>(`${this.url}&page=${page}`)
   }
 
 }

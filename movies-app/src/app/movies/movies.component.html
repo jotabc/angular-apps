@@ -1,5 +1,16 @@
+@if (isLoading) {
+<p>Loading...</p>
+} @else {
 <div>
   @for (movie of movies; track movie.id) {
   <movie-card [movie]="movie" />
   }
 </div>
+
+<footer>
+  @if (currentPage > 1) {
+  <button (click)="previousPage()">ANTERIOR</button>
+  }
+  <button (click)="nextPage()">SIGUIENTE</button>
+</footer>
+}
